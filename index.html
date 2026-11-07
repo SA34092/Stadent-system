@@ -2,43 +2,48 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>تسجيل الدخول</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام الطالب الجامعي</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="login-container">
+    <div class="container">
+        <!-- رأس الصفحة (الهيدر) -->
+        <header class="header">
+            <h1 class="brand-title">نظام الطالب الجامعي <span class="sparkle">✦</span></h1>
+            <div class="nav-buttons">
+                <button class="btn-outline">الرئيسية</button>
+                <button class="btn-outline">النتائج</button>
+                <button class="btn-outline">التسجيل</button>
+            </div>
+            <button class="btn-outline logout-btn">تسجيل خروج</button>
+        </header>
 
-        <h2>تسجيل الدخول</h2>
+        <!-- نموذج تسجيل الدخول / بيانات الطالب -->
+        <main class="form-card">
+            <form>
+                <div class="input-group">
+                    <label for="student-name">اسم الطالب</label>
+                    <input type="text" id="student-name" placeholder="اكتب اسمك الثلاثي">
+                </div>
 
-        <form onsubmit="handlelogin(event)">
+                <div class="input-group">
+                    <label for="student-id">الرقم الجامعي</label>
+                    <input type="text" id="student-id" placeholder="أدخل رقمك الجامعي">
+                </div>
 
-            <input type="text" id="studentId" placeholder="الرقم الجامعي" required>
+                <div class="input-group">
+                    <label for="college">الكلية / القسم</label>
+                    <input type="text" id="college" placeholder="مثال: العلوم الرياضية والحاسوب">
+                </div>
 
-            <input type="password" id="password" placeholder="كلمة السر" required>
-
-            <button type="submit" class="btn btn-green">
-                دخول
-            </button>
-
-            <button type="button" class="btn"
-                style="background:#6c757d; color:white;"
-                onclick="window.location.href='contact.html'">
-                اتصل بنا
-            </button>
-
-        </form>
-
+                <button type="submit" class="btn-submit">دخول النظام</button>
+            </form>
+            
+            <p class="success-message">مرحباً بك، يرجى إدخال بياناتك بدقة.</p>
+        </main>
     </div>
-
-    <script>
-        function handlelogin(event) {
-            event.preventDefault();
-
-            window.location.href = "results.html";
-        }
-    </script>
 
 </body>
 </html>
